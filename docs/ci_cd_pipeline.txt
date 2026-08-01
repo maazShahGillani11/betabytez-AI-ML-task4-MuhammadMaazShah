@@ -1,0 +1,43 @@
+1. Introduction to CI/CD
+1.1 What is CI/CD?
+CI/CD (Continuous Integration and Continuous Delivery/Deployment) is a DevOps practice that automates the entire software development lifecycle from integrating code, to testing it, to deploying it into production.
+It removes manual steps and ensures code moves from developer to testing to production reliably.
+
+1.2 Why CI/CD Matters
+- Faster and More Frequent Releases: Traditional releases were slow and manual. CI/CD automates the build, testing, and deployment process, allowing teams to release features quickly and deploy multiple times a day.
+- Early Detection of Bugs: CI/CD ensures that every code change automatically triggers build, test and validation.
+- Improved Code Quality: Code quality is improved by running unit tests, integration tests, UI tests, and API tests automatically.
+- Reduced Manual Work: Manual deployments often cause human errors. CI/CD automates everything.
+
+2. Core Concepts
+2.1 Continuous Integration (CI)
+Continuous Integration is the practice where developers frequently merge their code changes into a shared repository (e.g., GitHub, GitLab, Bitbucket). Code is automatically built and tested every time.
+CI checks code compilation, dependency installation, unit tests, code quality, formatting checks, and Static analysis (SonarQube, ESLint).
+
+2.2 Continuous Delivery (CD)
+Continuous Delivery ensures that the application is always in a deployable state. After CI successfully validates the code, the application is automatically prepared for release into staging or pre-production environments. Deployment to production requires manual approval.
+
+2.3 Continuous Deployment (CD)
+Continuous Deployment is the next step after Continuous Delivery. Every change that passes automated tests is automatically deployed into production without manual intervention.
+
+3. CI/CD Pipeline Stages
+- Source Stage: Pipeline starts when developers commit code to Version Control System (Git, GitHub, GitLab).
+- Build Stage: Source code is compiled or packaged into executable format (.jar, Docker image, binary).
+- Test Stage: Automated tests validate functionality (Unit Tests, Integration Tests, UI Tests, API Tests, Performance Tests).
+- Static Code Analysis: Tools like SonarQube check code quality and quality gates.
+- Deployment Stage: Application deployed to staging or production using Blue-Green, Canary, or Rolling deployment strategies.
+- Monitoring & Feedback: Post-deployment monitoring to ensure application stability.
+
+4. CI/CD Tools
+- CI/CD Platforms: Jenkins, GitHub Actions, Azure DevOps Pipelines, Bitbucket Pipelines.
+- Build & Dependency Tools: Maven, Gradle, npm, yarn.
+- Artifact Repositories: JFrog Artifactory, Docker Hub, AWS ECR, Nexus.
+- Testing Tools: Selenium, Playwright, Postman/Newman, JMeter.
+- Quality & Security Tools: SonarQube, Snyk.
+- Deployment Tools: Docker, Kubernetes, AWS CodeDeploy.
+
+5. Deployment Strategies & Rollbacks
+- Blue/Green Deployment: Two identical environments exist (Blue = live, Green = new version). Traffic switches to Green once testing succeeds.
+- Canary Releases: Deploying new version to a small percentage of users (e.g., 10%) first, monitoring issues, then rolling out to 100%.
+- Rollbacks: Reverting to previous stable version when deployment fails (Manual or Automatic).
+- Approval Gates: Mandatory QA checkpoints where manual approval is required before deployment continues.
